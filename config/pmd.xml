@@ -43,6 +43,11 @@
             <property name="minimum" value="1" />
         </properties>
     </rule>
+    <rule ref="category/java/codestyle.xml/ShortClassName">
+        <properties>
+            <property name="minimum" value="4" />
+        </properties>
+    </rule>
 
 
 </ruleset>

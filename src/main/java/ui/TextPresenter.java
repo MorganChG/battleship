@@ -40,11 +40,13 @@ public class TextPresenter implements Presenter {
         this.scanner = new Scanner(input);
     }
 
+    @Override
     public void displayMessage(String s) {
         //        terminal.writer().println(s);
         output.println(s);
     }
 
+    @Override
     public void displayGrid(Grid g) {
         // These gets us the dimensions of the grid
         int numOfRows = g.numRows();
@@ -81,10 +83,7 @@ public class TextPresenter implements Presenter {
         output.print("  " + symbol + " ");
     }
 
-    private String convert(Cell cell) {
-        return converter.convert(cell);
-    }
-
+    @Override
     public Coord askForCoordinate(Grid g) {
         Scanner scanner = new Scanner(input);
         while (true) {
@@ -99,6 +98,7 @@ public class TextPresenter implements Presenter {
         }
     }
 
+    @Override
     public void displayOptions(String prompt, Map<String, Runnable> choices) {
         output.println(prompt);
         printOptions(choices);
@@ -113,16 +113,6 @@ public class TextPresenter implements Presenter {
                 output.println("Invalid option. Please try again.");
             }
         }
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 
     private void printOptions(Map<String, Runnable> choices) {
